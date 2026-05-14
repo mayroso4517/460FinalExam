@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Marie-Jhayne Ayroso
+Student ID:   827121627
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,17 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return (
+        "A single shortest-path run from S is not enough because it will only look for "
+        "the cheapest path starting from S and going to each node. We must go through "
+        "all possible paths to find the most efficient sequence that will collect all "
+        "the relics and reach the end. "
+        "Once all the shortest-path distances are found, the algorithm will determine "
+        "the most efficient order of visiting all relics before reaching the end. "
+        "It requires a search over orders because visiting relics in different sequences "
+        "can lead to different total costs, so the algorithm must explore all possible "
+        "outcomes to find the cheapest route."
+    )
 
 
 # =============================================================================

@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Marie-Jhayne Ayroso
+**Student ID:** 827121627
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -17,13 +17,13 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  A single shortest-path run from S is not enough because it will only look for the cheapest path starting from S and going to each node. We must go through all the paths to find the most efficient sequence that will collect all the relics and reach the end. 
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+ Once all the shortest-path distances are found, the algorithm will find the most efficient order of visiting all relics before reaching the end.
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+ It requires a search over because searching each relic can lead to different options which is why the algorithm finds the cheapest route by searching through all the possible outcomes. 
 
 ---
 
