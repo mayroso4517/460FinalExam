@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Marie-Jhayne Ayroso
+**Student ID:** 827121627
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,12 +10,14 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [May 12th]: Initial Plan
 
-> Required. Write this before writing any code. Describe your plan: what you will
+> Required. Write this before writing any code. Describe your plan: what you  will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+For the initial plan I had planned on identifying which pieces of algorithms I wanted to use first and breaking it into small tasks. What I want to achieve first is to implement Dijkstra's algorithm to get the shortest-path distance before solving the relic problem. I think that the hardest part for me would be the recursive backtracking search since there is a possiblity of removing the optimal solutions. 
+
+I plan on testing this by using Dijkstra's output on small graphs and then testing the entire pipeline
 
 ---
 
