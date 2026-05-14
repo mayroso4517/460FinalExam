@@ -35,8 +35,9 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Start node (S) | Starting position to compute shortest path to every relic and to the exit node |
+| Relic nodes (R1, R2, ..., Rk) | Since each relic must be visited, we compute the shortest path from each one to all other important nodes|
+| Exit node (T) | Exit position from all other nodes which is used for the shortest path.|
 
 ### Part 2b: Distance Storage
 
@@ -44,20 +45,20 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Nested dictionary |
+| What the keys represent | Outer key = starting node, Inner key: destination node|
+| What the values represent | The minimum shortest-path distance between the starting and destination node|
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Hashing allows O(1) to access the values without searching through all the entries |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** O(k)
+- **Cost per run:** O(m log n)
+- **Total complexity:** O(k · m log n)
+- **Justification (one line):** For each source node, we are using Dijkstra which uses a priority queue to find the shortest path algoirthm
 
 ---
 
