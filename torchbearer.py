@@ -153,7 +153,24 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    return (
+        "For nodes already finalized (in S): "
+        "Nodes already finalized have a distance that represents the most optimal cost from the starting node, meaning no shorter path will be found later. "
+        
+        "For nodes not yet finalized (not in S): "
+        "Nodes not yet finalized only have the best known distance stored so far, but this value may still change if a shorter path is discovered. "
+        
+        "Initialization: "
+        "Since it starts at the node with a distance of 0 and all other nodes are infinity, no paths have been explored yet, so the invariant holds. "
+        
+        "Maintenance: "
+        "All edge weights are nonnegative, meaning any other path to a node cannot produce a smaller distance, so the node is already optimal when finalized. "
+        
+        "Termination: "
+        "At the end of the algorithm, all reachable nodes contain their optimal shortest-path distances from the starting node. "
+        
+        "Correct routing decisions depend on correct shortest-path distances to determine the most efficient order of visiting all relics and reaching the end."
+    )
 
 
 # =============================================================================

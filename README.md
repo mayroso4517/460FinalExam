@@ -73,29 +73,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  Nodes already finalized show that it has a distance with the most optimal cost from the starting node which means that there is no other shortest path found later.
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+ Nodes not yet finalized only have the best known distance that is stored so far but can be changed if there is another shortest path found.
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  Since it starts at the node with a distance of 0 and all other nodes are infinity, no path has been searched which shows that the invariant holds.
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  All edge weights are nonnegative meaning that any other path that is connected to that node cannot produce a smaller distance which shows that it is already optimal when finalized.
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  Guarantees that all reachable nodes contained its optimal shortest-path distance from the starting point.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+Correct routing decisions depend on correct shortest-path distances to determine the optimal order of visiting relics with minimum total cost.
 
 ---
 
