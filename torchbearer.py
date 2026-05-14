@@ -187,7 +187,19 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return (
+        "The failure mode: Greedy fails because it chooses the closest next node without considering the other sequences of relic visits that can lead to a more optimal solution. "
+        
+        "Counter-example setup: Start at S, path to R1 is cheaper and connects directly to the exit and R2 allows a shorter overall route to the exit. "
+        
+        "What greedy picks: Greedy chooses the closest available relic first since it is locally optimal. "
+        
+        "What optimal picks: Optimal chooses a different path with the lowest total cost from the starting node to the target node. "
+        
+        "Why greedy loses: Since greedy stays ahead by choosing the locally optimal solution, it can miss better overall paths that use a different route. "
+        
+        "The algorithm must explore all the possible orders of visiting the relic that will find the lowest-cost route."
+    )
 
 
 # =============================================================================

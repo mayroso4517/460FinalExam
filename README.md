@@ -106,17 +106,17 @@ Correct routing decisions depend on correct shortest-path distances to determine
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy fails because it chooses the closest next node without considering the other sequences of relic vists that can lead to a more optimal solution
+- **Counter-example setup:** Start at S, path to R1 is cheaper and connects directly to the exit and R2 allows a shorter overall route to the exit.
+- **What greedy picks:** Greedy chooses the closest available relic first since it is locally optimal
+- **What optimal picks:** Optimal chooses a different path with the lowest total cost from the starting node to the target node 
+- **Why greedy loses:** Since greedy stays ahead by choosing the locally optimal solution, it can miss better overall paths that use a different route 
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- Algorithm must explore all the possible orders of visiting the relic that will find the lowest-cost route.
 
 ---
 
