@@ -93,6 +93,7 @@ def run_dijkstra(graph, source):
 
     TODO
     """
+    #Collects source nodes for precomputing shortest path
     dist = {node: float('inf') for node in graph}
     dist[source] = 0 
 
@@ -267,7 +268,6 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     # It is safe because best[0] stores the total cost of the best solution so far.
     # Any other steps will just lead the total cost to increase since all edge weights are nonnegative 
     # meaning that any other route exceeding best[0] will not become optimal.
-
     if cost_so_far >= best[0]:
         return
     if len(relics_remaining) == 0:
@@ -313,7 +313,9 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
+    
+    return find_optimal_route(dist_table, spawn, relics, exit_node)
 
 
 # =============================================================================
