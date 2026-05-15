@@ -226,7 +226,12 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    best = [float('inf'), []]
+    relics_remaining = set(relics)
+
+    _explore(dist_table, spawn, relics_remaining, [], 0, exit_node, best)
+
+    return(best[0], best[1])
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -258,7 +263,33 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+
+    # It is safe because best[0] stores the total cost of the best solution so far.
+    # Any other steps will just lead the total cost to increase since all edge weights are nonnegative 
+    # meaning that any other route exceeding best[0] will not become optimal.
+
+    if cost_so_far >= best[0]:
+        return
+    if len(relics_remaining) == 0:
+        total_cost = cost_so_far + dist_table[current_loc][exit_node]
+
+        if total_cost < best[0]:
+            best[0] = total_cost
+            best[1] = relics_visited_order[:]
+
+        return
+    
+    for r in list(relics_remaining):
+
+        new_cost = cost_so_far + dist_table[current_loc][r]
+
+        relics_remaining.remove(r)
+        relics_visited_order.append(r)
+
+        _explore(dist_table, r, relics_remaining, relics_visited_order, new_cost, exit_node, best)
+
+        relics_visited_order.pop()
+        relics_remaining.add(r)
 
 
 # =============================================================================

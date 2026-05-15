@@ -129,9 +129,9 @@ Correct routing decisions depend on correct shortest-path distances to determine
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_loc | node | Tracks node of current position during the search |
+| Relics already collected | relics_remaining | set | Stores relics that need to be collected |
+| Fuel cost so far | cost_so_far | float | Total fuel of start node to current |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -139,18 +139,18 @@ Correct routing decisions depend on correct shortest-path distances to determine
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | Set |
+| Operation: check if relic already collected | Time complexity: O(1) |
+| Operation: mark a relic as collected | Time complexity: O(1) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | Allows efficient membership checking as well as add and remove for backtracking|
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** O(k!)
+- **Why:** Every order of the k relics must be tried in order to find the minimum-cost route 
 
 ---
 
@@ -160,23 +160,24 @@ Correct routing decisions depend on correct shortest-path distances to determine
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** Current route with the lowest total fuel cost
+- **When it is used:** When a new valid route is found through recursive exploration
+- **What it allows the algorithm to skip:** Incomplete routes with a higher current cost than the best known 
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** Current location, current cost, and remaining relics to visit
+- **What the lower bound accounts for:** Current path cost and estimate of the remaining cost to reach the end
+- **Why it never overestimates:** Shortest-path represents the minimum travel costs which shows that the estimate will not overestimate.
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- It is safe because any path whose current cost already exceeds the best known solution cannot be improved into a better complete route.
+- Extending a path will only increase or maintain the current cost because all edge weights are nonnegative.
 
 ---
 
